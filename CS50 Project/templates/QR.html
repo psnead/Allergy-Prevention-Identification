@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="C:\Users\psnea\Desktop\CS50 Project\CSS\styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Julius+Sans+One|Merriweather&display=swap" rel="stylesheet">
+
+  <!--qr code supplied by https://davidshimjs.github.io/qrcodejs/ -->
+  <script src="C:\Users\psnea\Desktop\CS50 Project\jquery.min.js"></script>
+  <script src="C:\Users\psnea\Desktop\CS50 Project\qrcode.min.js"></script>
+
+
+  <title>Make Your Custom QR</title>
+</head>
+
+<body>
+  <!-- Navbar Info -->
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" href="C:\Users\psnea\Desktop\CS50 Project\templates\index.html">
+      API
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="C:\Users\psnea\Desktop\CS50 Project\templates\index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="C:\Users\psnea\Desktop\CS50 Project\templates\QR.html">Make Your Own QR</a>
+        <a class="nav-item nav-link" href="C:\Users\psnea\Desktop\CS50 Project\templates\contact.html">Contact</a>
+        <a class="nav-item nav-link" href="C:\Users\psnea\Desktop\CS50 Project\templates\resources.html">Resources</a>
+      </div>
+    </div>
+    <form action="http://www.google.com/search" method="get" class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q" aria-label="Search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <header>
+    <img src="C:\Users\psnea\Desktop\CS50 Project\templates\APILogo2.png" alt="API Logo">
+  </header>
+
+  <!-- how to use -->
+  <h1>Most Common Food Allergies According To FDA</h1>
+  <h2>English / Spanish / Hindi / Mandrin / Japanese / French</h2>
+  <ul>
+    <li>Fish / pez / मछली / 鱼 / 魚 / Poisson</li>
+    <li>Shellfish / Mariscos / कस्तूरा / 贝类 / 貝 / Fruits de Mer</li>
+    <li>Eggs / Huevo / अंडा / 蛋 / 卵 /Oeuf</li>
+    <li>Wheat / Trigo / गेहूँ / 小麦 / 小麦 / Blé</li>
+    <li>Peanuts / Miseria / मूंगफली / 花生 / ピーナッツ / Cacahuètes</li>
+    <li>Soybeans / Haba de soja / सोयाबीन / 黄豆 / 大豆 / Soja</li>
+    <li>Milk / Leche / दूध / 牛奶 / 牛乳 / Lait</li>
+    <li>Tree Nuts / Arbol de nuez / पेड़ का अखरोट / 坚果 / 木の実 / Noisetier  </li>
+  </ul>
+
+  <h3>Please copy and paste or list all allergies along with the severity below. Please do not include '/'. Press submit when finished.</h3>
+
+  <!--qr code generator -->
+  <div class="qr_section">
+    <ul>
+      <li class="text_section"><textarea type="text" class="form-textbox" id="allergy_info" placeholder="List allergies here"></textarea></li>
+      <li><type="button" class="btn btn-info" button onclick="generateQR()">Submit</button></li>
+    </ul>
+    <div id="qrcode"></div>
+    <script type="text/javascript">
+      function generateQR(){
+        var allergy_info = $("#allergy_info").val();
+        new QRCode(document.getElementById("qrcode"), allergy_info);
+      }
+    </script>
+  </div>
+
+  <p>Credit goes to https://davidshimjs.github.io/qrcodejs/ for QR code generator library. Source on food allergies found at https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-food-allergies</p>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
